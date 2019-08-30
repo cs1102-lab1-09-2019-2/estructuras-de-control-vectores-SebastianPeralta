@@ -1,10 +1,10 @@
 # Ejercicios Estructuras de Control
 
 Nombre:
---
+Sebastián Peralta
 
 Github Username:
---
+SebastianPeralta
 
 Instrucciones:
 --

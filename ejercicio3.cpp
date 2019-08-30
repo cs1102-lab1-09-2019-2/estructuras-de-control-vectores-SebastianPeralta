@@ -1,25 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+#include <cmath>
+#include <cstddef>
+#include <unordered_map>
+#include <bits/unordered_map.h>
+
+using namespace std;
 
 int mediana(vector<int> &lista);
 vector<int> leerConsola();
 
 vector<int> leerConsola() {
-    //Ingrese un numero positivo, escriba -1 si ya no quiere ingresar mas numeros:
+    vector <int> lista;
+    int num;
+    cout<<"Ingrese un número positivo, escriba -1 si ya no quiere ingresar más números:\n";
+    while(true){
+        cin>>num;
+        if (num<0){
+            break;
+        }
+        lista.push_back(num);
+    }
+    return lista;
 }
 
 int mediana(vector<int> &lista) {
-    /*
-    Si el vector es 3, 9, 11, 15
-    Si el número de observaciones es par,
-     la mediana corresponde al promedio de los dos valores centrales.
-     Por ejemplo, en la muestra 3, 9, 11, 15, la mediana es (9+11)/2=10.
-     (v[4/2 -1] + v[4/2])/2 = (v[1] + v[2])/2 = (9+11)/2
-
-    Si el vector es 3, 9, 11, 15, 16
-    Si el numero de observaciones es impar,
-     Por ejemplo, en la muestra 3, 9, 11, 15, 16, la mediana es 11
-     v[4/2] = v[2] = 11
-     */
-    return null;
+    auto len=lista.size();
+    int mediana;
+    if (len%2==0) {
+        mediana = ((lista[len / 2 - 1] + lista[len / 2]) / 2);
+    } else {
+        mediana = lista[(len-1)/2];
+    }
+    return mediana;
 }
 
 int main() {
